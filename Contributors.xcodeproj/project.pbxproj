@@ -98,12 +98,9 @@
 		5651EFFE204B0C44005215C3 /* Contributors */ = {
 			isa = PBXGroup;
 			children = (
-				5651EFFF204B0C44005215C3 /* AppDelegate.swift */,
-				5651F001204B0C44005215C3 /* ViewController.swift */,
-				5651F003204B0C44005215C3 /* Main.storyboard */,
-				5651F006204B0C44005215C3 /* Assets.xcassets */,
-				5651F008204B0C44005215C3 /* LaunchScreen.storyboard */,
-				5651F00B204B0C44005215C3 /* Info.plist */,
+				5651F01F204B0CE3005215C3 /* Classes */,
+				5651F02B204B0D79005215C3 /* Resources */,
+				5651F02C204B0D82005215C3 /* Supporting Files */,
 			);
 			path = Contributors;
 			sourceTree = "<group>";
@@ -115,6 +112,113 @@
 				5651F016204B0C44005215C3 /* Info.plist */,
 			);
 			path = ContributorsTests;
+			sourceTree = "<group>";
+		};
+		5651F01F204B0CE3005215C3 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5651F020204B0CEE005215C3 /* Application */,
+				5651F021204B0CF4005215C3 /* API */,
+				5651F023204B0D0C005215C3 /* BusinessLogic */,
+				5651F025204B0D2A005215C3 /* Common */,
+				5651F026204B0D31005215C3 /* Data */,
+				5651F028204B0D46005215C3 /* Presentation */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5651F020204B0CEE005215C3 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5651EFFF204B0C44005215C3 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5651F021204B0CF4005215C3 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5651F022204B0CFC005215C3 /* Networking */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		5651F022204B0CFC005215C3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5651F023204B0D0C005215C3 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				5651F024204B0D15005215C3 /* Managers */,
+			);
+			path = BusinessLogic;
+			sourceTree = "<group>";
+		};
+		5651F024204B0D15005215C3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5651F025204B0D2A005215C3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5651F026204B0D31005215C3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5651F027204B0D38005215C3 /* Entities */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5651F027204B0D38005215C3 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		5651F028204B0D46005215C3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5651F001204B0C44005215C3 /* ViewController.swift */,
+				5651F029204B0D4E005215C3 /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5651F029204B0D4E005215C3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				5651F003204B0C44005215C3 /* Main.storyboard */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		5651F02B204B0D79005215C3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5651F006204B0C44005215C3 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5651F02C204B0D82005215C3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5651F008204B0C44005215C3 /* LaunchScreen.storyboard */,
+				5651F00B204B0C44005215C3 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B8BEF33E8AF9EE14A2174A54 /* Pods */ = {
@@ -499,7 +603,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Contributors/Info.plist;
+				INFOPLIST_FILE = "Contributors/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.Contributors;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -514,7 +618,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Contributors/Info.plist;
+				INFOPLIST_FILE = "Contributors/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.Contributors;
 				PRODUCT_NAME = "$(TARGET_NAME)";
