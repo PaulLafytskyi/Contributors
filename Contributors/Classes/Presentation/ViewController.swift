@@ -12,7 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        UserManagerFactory().defaultUserManager().getContributors(ownerName: Configurations.repoOwner, repoName: Configurations.repoName, succes: { (userList) in
+
+        }) { (error) in
+
+        }
     }
 
     override func didReceiveMemoryWarning() {
