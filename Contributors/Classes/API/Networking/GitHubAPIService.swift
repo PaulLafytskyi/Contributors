@@ -24,8 +24,13 @@ protocol GithubApiService {
 class GithubApiServiceImplementation: GithubApiService {
     var apiProvider: MoyaProvider<GithubAPIRouter>
 
-    init() {
-        self.apiProvider = MoyaProvider<GithubAPIRouter>()
+    init(stubbing: Bool) {
+        let stubClosure = { (target: TargetType) -> Moya.StubBehavior in
+            return .immediate
+        }
+        self.apiProvider = stubbing
+            ? MoyaProvider <GithubAPIRouter> (stubClosure: stubClosure)
+            : MoyaProvider <GithubAPIRouter> ()
     }
 
     func request(router: GithubAPIRouter, success succes: @escaping SuccessCallback, failure: @escaping FailureCallback) {
@@ -46,6 +51,6 @@ class GithubApiServiceImplementation: GithubApiService {
 
 class GithubApiServiceFactory {
     static func defaultGithubApiService() -> GithubApiService {
-        return GithubApiServiceImplementation()
+        return GithubApiServiceImplementation(stubbing: false)
     }
 }

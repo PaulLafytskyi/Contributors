@@ -33,7 +33,7 @@ extension GithubAPIRouter: TargetType {
     }
 
     var sampleData: Data {
-        return Data()
+        return stubbedResponse(filename: "Contributors")
     }
 
     var task: Task {
@@ -45,5 +45,15 @@ extension GithubAPIRouter: TargetType {
 
     var headers: [String : String]? {
         return nil
+    }
+
+    //MARK:- Private
+
+    private func stubbedResponse(filename: String) -> Data! {
+        class TestClass { }
+        let bundle = Bundle(for: TestClass.self)
+        let path = bundle.path(forResource: filename, ofType: "json")!
+        if let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {return  data}
+        return  Data()
     }
 }

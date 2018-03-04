@@ -7,7 +7,25 @@
 		<key>Contributors.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>7</integer>
+		</dict>
+		<key>ContributorsTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5651EFFB204B0C44005215C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5651F00F204B0C44005215C3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

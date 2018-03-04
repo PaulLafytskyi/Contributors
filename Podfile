@@ -7,6 +7,7 @@ target 'Contributors' do
 
   target 'ContributorsTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'Quick', '~> 1.2.0'
+    pod 'Nimble', '~>7.0.3'
   end
 end
