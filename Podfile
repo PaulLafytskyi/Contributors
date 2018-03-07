@@ -4,7 +4,7 @@
 target 'Contributors' do
   use_frameworks!
   pod 'Moya', '~> 11.0.0'
-
+  pod 'AlamofireImage'
   target 'ContributorsTests' do
     inherit! :search_paths
     pod 'Quick', '~> 1.2.0'

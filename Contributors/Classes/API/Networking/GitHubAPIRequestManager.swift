@@ -32,12 +32,12 @@ class GitHubAPIRequestManagerImplementation: GitHubAPIRequestManager {
             let userList = try decoder.decode([User].self, from: response.data)
                 success(userList)
             }
-            catch let decodeError {
-                failure(decodeError)
+            catch {
+                failure(GithubError.invalidResponse)
             }
 
-        }) { (error) in
-            failure(error)
+        }) { (_) in
+            failure(GithubError.networkError)
         }
     }
 }

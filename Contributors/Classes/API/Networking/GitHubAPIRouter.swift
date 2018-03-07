@@ -11,23 +11,32 @@ import Moya
 
 enum GithubAPIRouter {
     case contributors(owner: String, repo: String)
+    case downloadImage(url: URL)
 }
 
 extension GithubAPIRouter: TargetType {
+
     var baseURL: URL {
-        return Configurations.url
+        switch self {
+        case .contributors:
+            return Configurations.url
+        case .downloadImage(let url):
+            return url
+        }
     }
 
     var path: String {
         switch self {
         case .contributors(let owner, let repo):
             return "repos/\(owner)/\(repo)/contributors"
+        case .downloadImage:
+            return ""
         }
     }
 
     var method: Moya.Method {
         switch self {
-        case .contributors:
+        case .contributors, .downloadImage:
             return .get
         }
     }
@@ -38,8 +47,9 @@ extension GithubAPIRouter: TargetType {
 
     var task: Task {
         switch self {
-        case .contributors:
+        case .contributors, .downloadImage:
             return.requestPlain
+
         }
     }
 
