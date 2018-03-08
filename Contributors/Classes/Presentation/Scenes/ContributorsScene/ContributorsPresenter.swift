@@ -17,7 +17,7 @@ protocol ContributorsViewPresenter {
 
 protocol ContributorsModelPresenter: AnyObject {
     func newDataAppear(data: [User])
-    func failedToLoadData()
+    func failedToLoadData(reason: String)
 }
 
 class ContributorsPresenter: ContributorsViewPresenter, ContributorsModelPresenter {
@@ -62,7 +62,9 @@ class ContributorsPresenter: ContributorsViewPresenter, ContributorsModelPresent
         }
     }
 
-    func failedToLoadData() {
-        
+    func failedToLoadData(reason: String) {
+        DispatchQueue.main.async {
+            self.navigator.presentAlert(message: reason)
+        }
     }
 }

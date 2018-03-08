@@ -17,10 +17,13 @@ class ContributorsModel {
     }
 
     func loadData() {
-        userManager.getContributors(ownerName:Configurations.repoOwner, repoName: Configurations.repoName, succes: { (users) in
-            self.presenter?.newDataAppear(data: users)
+        userManager.getContributors(ownerName:Configurations.repoOwner, repoName: Configurations.repoName, succes: { [weak self] (users) in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.presenter?.newDataAppear(data: users)
         }) { (error) in
-            self.presenter?.failedToLoadData()
+            self.presenter?.failedToLoadData(reason: error.localizedDescription)
         }
     }
 }

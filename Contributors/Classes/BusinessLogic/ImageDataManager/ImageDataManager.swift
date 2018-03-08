@@ -33,8 +33,8 @@ class ImageDataManagerImplemetation: ImageDataManager {
             callback(image)
             return
         } else {
-            networkManager.getImage(at: URL(string: url)!, success: { (image) in
-                self.cacheService.add(image: image, forKey: url)
+            networkManager.getImage(at: URL(string: url)!, success: { [weak self] (image) in
+                self?.cacheService.add(image: image, forKey: url)
                 callback(image)
             }, fail: { (error) in
                 // Handle error

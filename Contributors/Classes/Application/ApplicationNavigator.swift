@@ -13,6 +13,7 @@ import UIKit
 protocol ApplicationNavigator: AnyObject {
     func navigateToCurrentApplicationState()
     func navigateToScreen(screen: UIViewController)
+    func presentAlert(message: String)
 }
 
 // MARK:- Implementation
@@ -34,6 +35,12 @@ class ApplicationNavigatorImpl: ApplicationNavigator {
         if let rootNavigation = window.rootViewController as? UINavigationController {
             rootNavigation.pushViewController(screen, animated: true)
         }
+    }
+
+    func presentAlert(message: String) {
+        let alert = UIAlertController(title: "Ooops!", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        window.rootViewController!.present(alert, animated: true, completion: nil)
     }
 }
 
